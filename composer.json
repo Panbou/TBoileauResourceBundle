@@ -1,0 +1,17 @@
+{
+    "name": "tboileau/resource-bundle",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "TBoileau",
+            "email": "t-boileau@email.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "TBoileau\\ResourceBundle\\": "src/TBoileau/ResourceBundle"
+        }
+    },
+    "require": {}
+}
