@@ -9,9 +9,7 @@
         }
     ],
     "autoload": {
-        "psr-4": {
-            "TBoileau\\ResourceBundle\\": "src/TBoileau/ResourceBundle"
-        }
+        "psr-4": { "TBoileau\\ResourceBundle\\": "" }
     },
     "require": {}
 }
