@@ -5,7 +5,7 @@ $(function () {
         type: 'text/css',
         href: 'https://cdnjs.cloudflare.com/ajax/libs/cropper/3.1.1/cropper.min.css'
     }).appendTo('head');
-    $("body").on("change", "_resource", function () {
+    $("body").on("change", "._resource", function () {
         var dir = $(this).data("dir");
         var maxSize = $(this).data("maxSize");
         var minHeight = $(this).data("minHeight");
@@ -33,8 +33,15 @@ $(function () {
             $validation.html("");
             $(this).addClass("is-valid");
         }
-
-        var isImage = types.indexOf("image/gif") + types.indexOf("image/jpeg") + types.indexOf("image/png") > 0;
+        console.log()
+        var isImage =
+            types.indexOf("image/gif") + types.indexOf("image/jpeg") + types.indexOf("image/png") > 0 &&
+            (
+                typeof minHeight != "undefined" ||
+                typeof maxHeight != "undefined" ||
+                typeof minWidth != "undefined" ||
+                typeof maxWidth != "undefined"
+            );
 
         var formData = new FormData();
         formData.append("file", file);
