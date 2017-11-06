@@ -5,7 +5,7 @@ $(function () {
         type: 'text/css',
         href: 'https://cdnjs.cloudflare.com/ajax/libs/cropper/3.1.1/cropper.min.css'
     }).appendTo('head');
-    $("._resource").on("change", function () {
+    $("body").on("change", "_resource", function () {
         var dir = $(this).data("dir");
         var maxSize = $(this).data("maxSize");
         var minHeight = $(this).data("minHeight");
