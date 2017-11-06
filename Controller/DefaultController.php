@@ -17,7 +17,7 @@ class DefaultController extends Controller
         try {
             $file = $request->files->get("file");
             $dir = $request->request->get("dir");
-            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+            $fileName = md5(uniqid()).'.'.$file->getClientOriginalExtension();
             $file->move(__DIR__ . '/../../../../web/' . $dir, $fileName);
             return $this->json(["error" => false, "resource" => $dir."/".$fileName]);
         }catch(\Exception $e) {
