@@ -7,11 +7,11 @@ $(function () {
     }).appendTo('head');
     $("body").on("change", "._resource", function () {
         var dir = $(this).data("dir");
-        var maxSize = $(this).data("maxSize");
-        var minHeight = $(this).data("minHeight");
-        var maxHeight = $(this).data("maxHeight");
-        var minWidth = $(this).data("minWidth");
-        var maxWidth = $(this).data("maxWidth");
+        var maxSize = $(this).data("maxsize");
+        var minHeight = $(this).data("minheight");
+        var maxHeight = $(this).data("maxheight");
+        var minWidth = $(this).data("minwidth");
+        var maxWidth = $(this).data("maxwidth");
         var ratio = $(this).data("ratio");
         var types = $(this).data("types").split(",");
         var $input = $($(this).data("rel"));
@@ -42,7 +42,7 @@ $(function () {
                 typeof minWidth != "undefined" ||
                 typeof maxWidth != "undefined"
             );
-
+        console.log(minHeight,maxHeight ,minWidth,maxWidth)
         var formData = new FormData();
         formData.append("file", file);
         formData.append("dir", dir);
@@ -117,3 +117,4 @@ $(function () {
 
     })
 });
+
