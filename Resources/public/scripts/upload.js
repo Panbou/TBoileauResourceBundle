@@ -49,7 +49,7 @@ $(function () {
         var $self = $(this);
         $.ajax({
             // Your server script to process the upload
-            url: '/app_dev.php/_resource/upload',
+            url: '/_resource/upload',
             type: 'POST',
             data: formData,
             cache: false,
