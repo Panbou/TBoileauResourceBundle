@@ -79,6 +79,7 @@ $(function () {
 
                         $body.find("img").cropper({
                             zoomOnWheel: false,
+                            autoCropArea: 1,
                             aspectRatio: parseFloat(ratio),
                             crop: function(e) {
                                 $self.attr("data-file", response.resource);
