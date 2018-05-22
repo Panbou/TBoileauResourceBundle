@@ -33,7 +33,6 @@ $(function () {
             $validation.html("");
             $(this).addClass("is-valid");
         }
-        console.log()
         var isImage =
             types.indexOf("image/gif") + types.indexOf("image/jpeg") + types.indexOf("image/png") > 0 &&
             (
@@ -42,7 +41,6 @@ $(function () {
                 typeof minWidth != "undefined" ||
                 typeof maxWidth != "undefined"
             );
-        console.log(minHeight,maxHeight ,minWidth,maxWidth)
         var formData = new FormData();
         formData.append("file", file);
         formData.append("dir", dir);
@@ -73,7 +71,7 @@ $(function () {
                 if (response.error) {
                     $validation.html(response.message);
                     $self.addClass("is-invalid");
-                }else if(isImage){
+                }else if(isImage && ratio != ""){
                     $self.addClass("is-valid");
                     $modal.on("shown.bs.modal", function() {
                         var $body = $modal.find(".modal-body");
@@ -92,7 +90,7 @@ $(function () {
                         });
                         $modal.find("button").on("click", function() {
                             $.ajax({
-                                url: "/_resource/crop",
+                                url: "/app_dev.php/_resource/crop",
                                 type: "post",
                                 data: $self.data(),
                                 beforeSend: function() {
