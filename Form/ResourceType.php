@@ -51,7 +51,7 @@ class ResourceType extends AbstractType
             "dir"
         ]);
         $resolver->setDefaults([
-            "ratio" => 1,
+            "ratio" => null,
             "minWidth" => null,
             "maxWidth" => null,
             "minHeight" => null,
