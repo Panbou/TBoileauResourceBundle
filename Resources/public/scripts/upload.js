@@ -91,7 +91,7 @@ $(function () {
                         });
                         $modal.find("button").on("click", function() {
                             $.ajax({
-                                url: "/app_dev.php/_resource/crop",
+                                url: "/_resource/crop",
                                 type: "post",
                                 data: $self.data(),
                                 beforeSend: function() {
